@@ -15,6 +15,8 @@ class SecondSignUpViewController: UIViewController {
 
     }
     
-
+    @IBAction func dismissModal() {
+        dismiss(animated: true, completion: nil)
+    }
 
 }

@@ -17,6 +17,7 @@
 		B720EB7A259EF15000C134F8 /* LoginPageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B720EB79259EF15000C134F8 /* LoginPageUITests.swift */; };
 		B75517A5259FFFEB0045FEE9 /* FirstSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75517A4259FFFEB0045FEE9 /* FirstSignUpViewController.swift */; };
 		B75517AA25A000270045FEE9 /* SecondSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75517A925A000270045FEE9 /* SecondSignUpViewController.swift */; };
+		B75517C125A007CD0045FEE9 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75517C025A007CD0045FEE9 /* UserInformation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		B720EB7B259EF15000C134F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B75517A4259FFFEB0045FEE9 /* FirstSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSignUpViewController.swift; sourceTree = "<group>"; };
 		B75517A925A000270045FEE9 /* SecondSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSignUpViewController.swift; sourceTree = "<group>"; };
+		B75517C025A007CD0045FEE9 /* UserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				B720EB57259EF14F00C134F8 /* AppDelegate.swift */,
 				B720EB59259EF14F00C134F8 /* SceneDelegate.swift */,
 				B720EB5D259EF14F00C134F8 /* Main.storyboard */,
+				B75517C025A007CD0045FEE9 /* UserInformation.swift */,
 				B720EB5B259EF14F00C134F8 /* LoginPageViewcontroller.swift */,
 				B75517A4259FFFEB0045FEE9 /* FirstSignUpViewController.swift */,
 				B75517A925A000270045FEE9 /* SecondSignUpViewController.swift */,
@@ -265,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B720EB5C259EF14F00C134F8 /* LoginPageViewcontroller.swift in Sources */,
+				B75517C125A007CD0045FEE9 /* UserInformation.swift in Sources */,
 				B720EB58259EF14F00C134F8 /* AppDelegate.swift in Sources */,
 				B75517AA25A000270045FEE9 /* SecondSignUpViewController.swift in Sources */,
 				B75517A5259FFFEB0045FEE9 /* FirstSignUpViewController.swift in Sources */,

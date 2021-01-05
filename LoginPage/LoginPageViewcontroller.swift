@@ -19,13 +19,5 @@ class LoginPageViewcontroller: UIViewController {
         yagomImage.image = UIImage(named: "yagom_icon")
     }
     
-    @IBAction func singInBtn(_ sender: UIButton) {
-        
-    }
-    
-    @IBAction func signUpBtn(_ sender: UIButton) {
-        
-    }
-    
 }
 
