@@ -21,7 +21,6 @@ class FirstSignUpViewcontroller : UIViewController, UIImagePickerControllerDeleg
     
     var isEmpty = false
     var isEqaul = false
-    var viewIsEmpty = false
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         self.view.endEditing(true)
@@ -42,6 +41,7 @@ class FirstSignUpViewcontroller : UIViewController, UIImagePickerControllerDeleg
         IDTextField.text = UserInformation.shared.name
         passwordTextField.text = UserInformation.shared.password
         checkPasswordTextField.text = UserInformation.shared.checkPassword
+        
     }
     
     //MARK:- Model
@@ -51,41 +51,38 @@ class FirstSignUpViewcontroller : UIViewController, UIImagePickerControllerDeleg
         UserInformation.shared.password = nil
         UserInformation.shared.checkPassword = nil
     }
-    
+
     
     func checkTextField() {
-        
-        // Password Check
+
+        // password Check
         if UserInformation.shared.password == UserInformation.shared.checkPassword {
             isEqaul = !isEqaul
         } else {
             isEqaul = false
         }
         
-        // IsEmty Check
+        // isEmty Check
         let ID = IDTextField.text?.isEmpty
         let Password = passwordTextField.text?.isEmpty
         let checkPassword = checkPasswordTextField.text?.isEmpty
+        let detail = detailTextView.text?.isEmpty
         
-        if let check1 = ID , let check2 = Password, let check3 = checkPassword {
-            if check1 || check2 || check3 {
+
+        
+        if let check1 = ID , let check2 = Password, let check3 = checkPassword, let check4 = detail {
+            if check1 || check2 || check3 || check4 {
                 isEmpty = true
             } else {
                 isEmpty = false
             }
         }
-    }
-    
-    func checkTextView() {
         
-        let detail = detailTextView.text?.isEmpty
-        
-        if let check4 = detail {
-            if check4 {
-                viewIsEmpty = true
-            } else {
-                viewIsEmpty = false
-            }
+        // isEnabled
+        if !isEmpty && isEqaul  {
+            nextPageBtn.isEnabled = true
+        } else {
+            nextPageBtn.isEnabled = false
         }
     }
     
@@ -130,7 +127,11 @@ class FirstSignUpViewcontroller : UIViewController, UIImagePickerControllerDeleg
         
         if let originImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             imageView.image = originImage
+        } else if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+                imageView.image = editedImage
         }
+    
+        
         self.dismiss(animated: true, completion: nil)
         
     }
@@ -141,17 +142,13 @@ class FirstSignUpViewcontroller : UIViewController, UIImagePickerControllerDeleg
         UserInformation.shared.name = IDTextField.text
         UserInformation.shared.password = passwordTextField.text
         UserInformation.shared.checkPassword = checkPasswordTextField.text
-        
         checkTextField()
     }
-    
+
+
     func textViewDidEndEditing(_ textView: UITextView) {
         UserInformation.shared.detail = detailTextView.text
-        
-        checkTextView()
-        
     }
-    
     
 }
 

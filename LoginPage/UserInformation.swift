@@ -18,5 +18,6 @@ class UserInformation {
     var phoneNumber : String?
     var birthday : String?
     
+    private init() {}
     
 }

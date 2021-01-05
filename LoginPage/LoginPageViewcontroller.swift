@@ -19,5 +19,10 @@ class LoginPageViewcontroller: UIViewController {
         yagomImage.image = UIImage(named: "yagom_icon")
     }
     
+    @IBAction func signUpBtn(_ sender: UIButton) {
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "FirstSignUpViewcontroller") as? FirstSignUpViewcontroller else { return }
+        self.present(vc, animated: true)
+    }
+    
 }
 

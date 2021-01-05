@@ -35,16 +35,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xTL-Rg-RLP">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Sing In"/>
+                                        <state key="normal" title="Sign In"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaC-cb-yO3">
                                         <rect key="frame" x="160" y="0.0" width="70" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Sing Up">
+                                        <state key="normal" title="Sign Up">
                                             <color key="titleColor" systemColor="systemRedColor"/>
                                         </state>
                                         <connections>
-                                            <segue destination="E4X-sR-BDw" kind="presentation" id="3o3-Z4-neK"/>
+                                            <action selector="signUpBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="44f-Kq-PK0"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -82,21 +82,21 @@
             <objects>
                 <viewController storyboardIdentifier="FirstSignUpViewcontroller" id="E4X-sR-BDw" customClass="FirstSignUpViewcontroller" customModule="LoginPage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uSW-F4-d1f">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mWc-z7-kAU">
-                                <rect key="frame" x="192" y="30" width="202" height="34"/>
+                                <rect key="frame" x="192" y="74" width="202" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VFw-xU-f65">
-                                <rect key="frame" x="192" y="89" width="202" height="34"/>
+                                <rect key="frame" x="192" y="133" width="202" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="wGv-wY-fDT">
-                                <rect key="frame" x="72" y="752" width="270" height="36"/>
+                                <rect key="frame" x="72" y="806" width="270" height="36"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FrV-qi-l9u">
                                         <rect key="frame" x="0.0" y="0.0" width="35" height="36"/>
@@ -118,23 +118,23 @@
                                 </subviews>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fkw-i7-dpA">
-                                <rect key="frame" x="20" y="200" width="374" height="528"/>
+                                <rect key="frame" x="20" y="244" width="374" height="538"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="avF-pq-yd1">
-                                <rect key="frame" x="20" y="30" width="152" height="152"/>
+                                <rect key="frame" x="20" y="74" width="152" height="152"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Check Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I8f-d0-2nh">
-                                <rect key="frame" x="192" y="148" width="202" height="34"/>
+                                <rect key="frame" x="192" y="192" width="202" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMp-eh-QeV">
-                                <rect key="frame" x="20" y="30" width="152" height="152"/>
+                                <rect key="frame" x="20" y="74" width="152" height="152"/>
                                 <connections>
                                     <action selector="imagePick:" destination="E4X-sR-BDw" eventType="touchUpInside" id="Ump-Zg-rOZ"/>
                                 </connections>
