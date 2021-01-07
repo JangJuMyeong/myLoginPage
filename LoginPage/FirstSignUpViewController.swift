@@ -11,7 +11,6 @@ class FirstSignUpViewcontroller : UIViewController, UIImagePickerControllerDeleg
     
     var imagePicker : UIImagePickerController! = UIImagePickerController()
     
-    
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var IDTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
@@ -28,6 +27,7 @@ class FirstSignUpViewcontroller : UIViewController, UIImagePickerControllerDeleg
     
     
     override func viewDidLoad() {
+
         super.viewDidLoad()
         nextPageBtn.isEnabled = false
         IDTextField.delegate = self
@@ -37,26 +37,22 @@ class FirstSignUpViewcontroller : UIViewController, UIImagePickerControllerDeleg
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        IDTextField.text = UserInformation.shared.name
-        passwordTextField.text = UserInformation.shared.password
-        checkPasswordTextField.text = UserInformation.shared.checkPassword
-        
-    }
     
-    //MARK:- Model
+    //MARK:- custom func
     
-    func initfirstPageUserInformation() {
-        UserInformation.shared.name = nil
+    func initUserInformation() {
+        UserInformation.shared.ID = nil
         UserInformation.shared.password = nil
         UserInformation.shared.checkPassword = nil
+        UserInformation.shared.detail = nil
     }
-
+    
+    
     
     func checkTextField() {
-
+        
         // password Check
-        if UserInformation.shared.password == UserInformation.shared.checkPassword {
+        if passwordTextField.text == checkPasswordTextField.text {
             isEqaul = !isEqaul
         } else {
             isEqaul = false
@@ -68,7 +64,7 @@ class FirstSignUpViewcontroller : UIViewController, UIImagePickerControllerDeleg
         let checkPassword = checkPasswordTextField.text?.isEmpty
         let detail = detailTextView.text?.isEmpty
         
-
+        
         
         if let check1 = ID , let check2 = Password, let check3 = checkPassword, let check4 = detail {
             if check1 || check2 || check3 || check4 {
@@ -90,16 +86,9 @@ class FirstSignUpViewcontroller : UIViewController, UIImagePickerControllerDeleg
     
     //MARK:- Button
     
-    
-    @IBAction func nextPageAction(_ sender: UIButton) {
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "SecondSignUpViewController") as? SecondSignUpViewController else { return }
-        self.present(vc, animated: true)
-    }
-    
-    
-    @IBAction func dismissModal() {
-        initfirstPageUserInformation()
-        dismiss(animated: true, completion: nil)
+    @IBAction func cancelBtn() {
+        initUserInformation()
+        self.navigationController?.popViewController(animated: true)
         
     }
     
@@ -125,12 +114,13 @@ class FirstSignUpViewcontroller : UIViewController, UIImagePickerControllerDeleg
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        if let originImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+        if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            imageView.image = editedImage
+        } else if let originImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             imageView.image = originImage
-        } else if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
-                imageView.image = editedImage
         }
-    
+        
+        
         
         self.dismiss(animated: true, completion: nil)
         
@@ -139,16 +129,24 @@ class FirstSignUpViewcontroller : UIViewController, UIImagePickerControllerDeleg
     //TextFieldDelegate
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        UserInformation.shared.name = IDTextField.text
+        UserInformation.shared.ID = IDTextField.text
         UserInformation.shared.password = passwordTextField.text
         UserInformation.shared.checkPassword = checkPasswordTextField.text
         checkTextField()
     }
-
-
+    
+    //TextViewDelegate
+    
     func textViewDidEndEditing(_ textView: UITextView) {
         UserInformation.shared.detail = detailTextView.text
+        checkTextField()
+        if detailTextView.text.isEmpty{
+            nextPageBtn.isEnabled = false
+        } else {
+            nextPageBtn.isEnabled = true
+        }
     }
-    
 }
 
+
+    

@@ -11,13 +11,15 @@ class UserInformation {
     
     static let shared : UserInformation = UserInformation()
     
-    var name : String?
+    private init() {}
+    
+    var ID : String?
     var password : String?
     var checkPassword : String?
     var detail : String?
     var phoneNumber : String?
     var birthday : String?
     
-    private init() {}
     
 }
+

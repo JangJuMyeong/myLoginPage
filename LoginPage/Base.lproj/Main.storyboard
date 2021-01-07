@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HUJ-h3-Qq9">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -11,7 +11,7 @@
         <!--Login Page Viewcontroller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginPageViewcontroller" customModule="LoginPage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginPageViewcontroller" id="BYZ-38-t0r" customClass="LoginPageViewcontroller" customModule="LoginPage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,7 +44,7 @@
                                             <color key="titleColor" systemColor="systemRedColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="signUpBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="44f-Kq-PK0"/>
+                                            <segue destination="E4X-sR-BDw" kind="show" id="LXV-xj-pNb"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -67,6 +67,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EIW-7O-mAd" secondAttribute="trailing" constant="60" id="vId-vp-fF6"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="fsc-gt-uZt"/>
                     <connections>
                         <outlet property="iDTextField" destination="rAY-ZQ-Q6j" id="LTR-94-Zk2"/>
                         <outlet property="passWordField" destination="EIW-7O-mAd" id="WQw-6I-4Bh"/>
@@ -75,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="115.84821428571428"/>
+            <point key="canvasLocation" x="1042.0289855072465" y="115.84821428571428"/>
         </scene>
         <!--First Sign Up Viewcontroller-->
         <scene sceneID="7ft-lM-ZXa">
@@ -104,7 +105,7 @@
                                         <color key="tintColor" systemColor="systemRedColor"/>
                                         <state key="normal" title="취소"/>
                                         <connections>
-                                            <action selector="dismissModal" destination="E4X-sR-BDw" eventType="touchUpInside" id="MIQ-Kn-f3W"/>
+                                            <action selector="cancelBtn" destination="E4X-sR-BDw" eventType="touchUpInside" id="IXY-p4-bBD"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IzY-Wx-iBB">
@@ -112,7 +113,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="다음"/>
                                         <connections>
-                                            <action selector="nextPageAction:" destination="E4X-sR-BDw" eventType="touchUpInside" id="uec-SW-Awo"/>
+                                            <segue destination="EIK-Fb-wR9" kind="show" id="DXO-Lx-kve"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -124,7 +125,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="avF-pq-yd1">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="avF-pq-yd1">
                                 <rect key="frame" x="20" y="74" width="152" height="152"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
@@ -180,7 +181,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kKX-6S-fhK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="808.92857142857144"/>
+            <point key="canvasLocation" x="1790" y="811"/>
         </scene>
         <!--Second Sign Up View Controller-->
         <scene sceneID="c05-1V-YLG">
@@ -201,8 +202,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="January 2 2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayB-rR-Gbz">
-                                <rect key="frame" x="277.5" y="172" width="116.5" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="January 2, 2021" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayB-rR-Gbz">
+                                <rect key="frame" x="200" y="172" width="194" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -222,7 +223,7 @@
                                         <color key="tintColor" systemColor="systemRedColor"/>
                                         <state key="normal" title="취소"/>
                                         <connections>
-                                            <action selector="dismissModal" destination="EIK-Fb-wR9" eventType="touchUpInside" id="VT8-xz-FlC"/>
+                                            <action selector="cancelBtn" destination="EIK-Fb-wR9" eventType="touchUpInside" id="moJ-Md-HbD"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHH-yg-MSN">
@@ -230,13 +231,16 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="이전"/>
                                         <connections>
-                                            <action selector="dismissModal" destination="EIK-Fb-wR9" eventType="touchUpInside" id="A1A-NJ-M7r"/>
+                                            <action selector="backToPage:" destination="EIK-Fb-wR9" eventType="touchUpInside" id="IEY-hJ-Go5"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZF-CT-L9F">
                                         <rect key="frame" x="270" y="0.0" width="35" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="가입"/>
+                                        <connections>
+                                            <action selector="completeAction:" destination="EIK-Fb-wR9" eventType="touchUpInside" id="zoS-Hp-8Yx"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -260,17 +264,40 @@
                             <constraint firstItem="y62-PK-DpL" firstAttribute="leading" secondItem="meL-wY-Hwi" secondAttribute="leading" constant="20" id="ZPJ-rM-zim"/>
                             <constraint firstItem="meL-wY-Hwi" firstAttribute="trailing" secondItem="AEQ-0f-neT" secondAttribute="trailing" constant="33" id="Zr5-Hs-Bhj"/>
                             <constraint firstItem="meL-wY-Hwi" firstAttribute="trailing" secondItem="ayB-rR-Gbz" secondAttribute="trailing" constant="20" id="bA4-Oe-mHm"/>
-                            <constraint firstItem="ayB-rR-Gbz" firstAttribute="leading" secondItem="meL-wY-Hwi" secondAttribute="leading" constant="277.5" id="f7p-j1-Gns"/>
+                            <constraint firstItem="ayB-rR-Gbz" firstAttribute="leading" secondItem="meL-wY-Hwi" secondAttribute="leading" constant="200" id="f7p-j1-Gns"/>
                             <constraint firstItem="QsF-se-7SA" firstAttribute="top" secondItem="meL-wY-Hwi" secondAttribute="top" constant="30" id="hoE-zE-WQR"/>
                             <constraint firstItem="meL-wY-Hwi" firstAttribute="trailing" secondItem="yHX-5M-iba" secondAttribute="trailing" constant="335" id="jW1-sw-sM1"/>
                             <constraint firstItem="meL-wY-Hwi" firstAttribute="bottom" secondItem="AlC-IR-nzf" secondAttribute="bottom" constant="385" id="vDB-hM-ScZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="T0F-IA-gsB"/>
+                    <connections>
+                        <outlet property="birthdayLabel" destination="ayB-rR-Gbz" id="ZTj-Bv-6CI"/>
+                        <outlet property="birthdayPicker" destination="AEQ-0f-neT" id="Y1N-ip-dL7"/>
+                        <outlet property="completeBtn" destination="JZF-CT-L9F" id="cAe-LK-VbI"/>
+                        <outlet property="phoneNumberTextField" destination="y62-PK-DpL" id="DLn-in-rOU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2vF-Zy-wZV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="921.73913043478262" y="817.63392857142856"/>
+            <point key="canvasLocation" x="236" y="1084"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OYV-SX-3hl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="HUJ-h3-Qq9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ozM-aL-5ib">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="dva-Gh-50C"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gFk-YF-uR9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="115.84821428571428"/>
         </scene>
     </scenes>
     <resources>

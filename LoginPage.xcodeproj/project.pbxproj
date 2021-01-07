@@ -18,6 +18,7 @@
 		B75517A5259FFFEB0045FEE9 /* FirstSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75517A4259FFFEB0045FEE9 /* FirstSignUpViewController.swift */; };
 		B75517AA25A000270045FEE9 /* SecondSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75517A925A000270045FEE9 /* SecondSignUpViewController.swift */; };
 		B75517C125A007CD0045FEE9 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75517C025A007CD0045FEE9 /* UserInformation.swift */; };
+		B7F2A37D25A722B80028438E /* completeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F2A37C25A722B80028438E /* completeDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		B75517A4259FFFEB0045FEE9 /* FirstSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSignUpViewController.swift; sourceTree = "<group>"; };
 		B75517A925A000270045FEE9 /* SecondSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSignUpViewController.swift; sourceTree = "<group>"; };
 		B75517C025A007CD0045FEE9 /* UserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
+		B7F2A37C25A722B80028438E /* completeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = completeDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				B720EB5B259EF14F00C134F8 /* LoginPageViewcontroller.swift */,
 				B75517A4259FFFEB0045FEE9 /* FirstSignUpViewController.swift */,
 				B75517A925A000270045FEE9 /* SecondSignUpViewController.swift */,
+				B7F2A37C25A722B80028438E /* completeDelegate.swift */,
 				B720EB60259EF15000C134F8 /* Assets.xcassets */,
 				B720EB62259EF15000C134F8 /* LaunchScreen.storyboard */,
 				B720EB65259EF15000C134F8 /* Info.plist */,
@@ -273,6 +276,7 @@
 				B75517AA25A000270045FEE9 /* SecondSignUpViewController.swift in Sources */,
 				B75517A5259FFFEB0045FEE9 /* FirstSignUpViewController.swift in Sources */,
 				B720EB5A259EF14F00C134F8 /* SceneDelegate.swift in Sources */,
+				B7F2A37D25A722B80028438E /* completeDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
